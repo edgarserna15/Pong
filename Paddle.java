@@ -5,7 +5,7 @@ public class Paddle{
 	
 	public int paddleNumber;
 	
-	public int x, y, width = 50, height = 300;
+	public int x, y, width = 50, height = 250;
 	
 	public int score;
 	
@@ -31,21 +31,20 @@ public class Paddle{
 		int speed = 10;
 		
 		if(up){
-			if(y + height - speed > 0)
+			if(y - speed > 0)
 			{
 				y -= speed;
-				System.out.println(y);
 			}
 			else {
 				y = 0;
 			}
 		}
 		else{
-			if(y + speed < Pong.pong.height){
+			if(y + height + speed < Pong.pong.height){
 				y += speed;
 			}
 			else {
-				y = Pong.pong.height;
+				y = Pong.pong.height - height;
 			}
 			
 		}
